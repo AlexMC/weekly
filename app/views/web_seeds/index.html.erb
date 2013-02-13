@@ -1,25 +1,15 @@
-<h1>Listing web_seeds</h1>
+<h1> Weekly </h1>
 
-<table>
-  <tr>
-    <th>Url</th>
-    <th>Votes</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
 
-<% @web_seeds.each do |web_seed| %>
-  <tr>
-    <td><%= web_seed.url %></td>
-    <td><%= web_seed.votes %></td>
-    <td><%= link_to 'Show', web_seed %></td>
-    <td><%= link_to 'Edit', edit_web_seed_path(web_seed) %></td>
-    <td><%= link_to 'Destroy', web_seed, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
-</table>
+<div ng-controller="WebSeedCtrl">
+  <form ng-submit="addWebSeed()">
+    <input type="text" ng-model="WebSeed.url">
+    <input type="submit" value="add">
+  </form>
 
-<br />
-
-<%= link_to 'New Web seed', new_web_seed_path %>
+  <ul>
+    <li ng-repeat="web_seed in WebSeeds">
+      {{web_seed}}
+    </li>
+  </ul>
+</div>

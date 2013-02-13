@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Url:</b>
+  <%= @web_seed.url %>
+</p>
+
+<p>
+  <b>Votes:</b>
+  <%= @web_seed.votes %>
+</p>
+
+
+<%= link_to 'Edit', edit_web_seed_path(@web_seed) %> |
+<%= link_to 'Back', web_seeds_path %>

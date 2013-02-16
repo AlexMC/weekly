@@ -10,7 +10,7 @@
 
     <ul>
       <li ng-repeat="web_seed in web_seeds">
-        {{web_seed.url}}
+        {{web_seed.url}} <button ng-click="deleteWebSeed(web_seed)">Delete</button>
       </li>
     </ul>
   </div>

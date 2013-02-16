@@ -10,3 +10,7 @@ app = angular.module("Weekly", ["ngResource"])
     web_seed = WebSeed.save($scope.newWebSeed)
     $scope.web_seeds.push(web_seed)
     $scope.newWebSeed = {}
+
+  $scope.deleteWebSeed = (webseed) ->
+    WebSeed.delete(webseed)
+    $scope.web_seeds = WebSeed.query()

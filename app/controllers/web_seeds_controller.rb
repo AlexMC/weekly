@@ -19,7 +19,7 @@ class WebSeedsController < ApplicationController
   end 
 
   def destroy
-    respond_with WebSeed.destroy(params[:id])
+    render json: WebSeed[params[:id]].delete
   end 
 
 end

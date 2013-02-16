@@ -2,7 +2,7 @@ class WebSeedsController < ApplicationController
   respond_to :json
 
   def index
-    respond_with WebSeed.all
+    respond_with sorted_seeds
   end
 
   def show
@@ -19,11 +19,19 @@ class WebSeedsController < ApplicationController
   end 
 
   def destroy
-    render json: WebSeed[params[:id]].delete
+    WebSeed[params[:id]].delete
+    render json: sorted_seeds
   end 
 
   def upvote
-    render json: WebSeed[params[:id]].incr(1)
+    WebSeed[params[:id]].incr(:votes)
+    render json: sorted_seeds
+  end
+
+  private
+
+  def sorted_seeds
+    WebSeed.all.sort_by(:votes, :order => "desc")
   end
 
 end

@@ -1,9 +1,0 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
-
-one:
-  url: MyText
-  votes: 1
-
-two:
-  url: MyText
-  votes: 1

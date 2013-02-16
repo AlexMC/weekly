@@ -18,30 +18,30 @@ class WebSeedsControllerTest < ActionController::TestCase
 
   test "should create web_seed" do
     assert_difference('WebSeed.count') do
-      post :create, web_seed: @web_seed.attributes
+      post :create, web_seed: { url: @web_seed.url, votes: @web_seed.votes }
     end
 
     assert_redirected_to web_seed_path(assigns(:web_seed))
   end
 
   test "should show web_seed" do
-    get :show, id: @web_seed.to_param
+    get :show, id: @web_seed
     assert_response :success
   end
 
   test "should get edit" do
-    get :edit, id: @web_seed.to_param
+    get :edit, id: @web_seed
     assert_response :success
   end
 
   test "should update web_seed" do
-    put :update, id: @web_seed.to_param, web_seed: @web_seed.attributes
+    put :update, id: @web_seed, web_seed: { url: @web_seed.url, votes: @web_seed.votes }
     assert_redirected_to web_seed_path(assigns(:web_seed))
   end
 
   test "should destroy web_seed" do
     assert_difference('WebSeed.count', -1) do
-      delete :destroy, id: @web_seed.to_param
+      delete :destroy, id: @web_seed
     end
 
     assert_redirected_to web_seeds_path

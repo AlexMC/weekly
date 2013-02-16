@@ -1,9 +1,3 @@
-@WebSeedCtrl = ($scope) ->
-  $scope.WebSeeds = [
-    "http://slbenfica.pt",
-    "http://screencasts.com",
-    "http://www.weareswat.com"
-  ]
-
-  $scope.addWebSeed = ->
-    $scope.WebSeeds.push($scope.WebSeed.url)
+# Place all the behaviors and hooks related to the matching controller here.
+# All this logic will automatically be available in application.js.
+# You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/

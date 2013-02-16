@@ -10,7 +10,8 @@ class WebSeedsController < ApplicationController
   end 
 
   def create
-    respond_with WebSeed.create(params[:web_seed])
+    new_web_seed = WebSeed.create(params[:web_seed])
+    render json: new_web_seed.to_hash
   end 
 
   def update

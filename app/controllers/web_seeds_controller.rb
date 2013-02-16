@@ -22,4 +22,8 @@ class WebSeedsController < ApplicationController
     render json: WebSeed[params[:id]].delete
   end 
 
+  def upvote
+    render json: WebSeed[params[:id]].incr(1)
+  end
+
 end

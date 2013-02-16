@@ -1,5 +1,11 @@
 Weekly::Application.routes.draw do
-  resources :web_seeds
+  
+  resources :web_seeds do
+    member do 
+      put 'upvote'
+    end
+  end
+
 
   root to: "home#index"
   # root to: "webSeeds#index"

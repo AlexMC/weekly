@@ -1,7 +1,8 @@
 Weekly::Application.routes.draw do
   resources :web_seeds
 
-  root to: "webSeeds#index"
+  root to: "home#index"
+  # root to: "webSeeds#index"
 
 
   # The priority is based upon order of creation:

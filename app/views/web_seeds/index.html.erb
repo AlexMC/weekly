@@ -1,1 +1,17 @@
 <h1> angular webseed </h1>
+
+<div ng-app="Weekly">
+  <div ng-controller="WebSeedCtrl">
+
+    <form ng-submit="addWebSeed()">
+      <input type="text" ng-model="web_seed.url">
+      <input type="submit" value="add">
+    </form>
+
+    <ul>
+      <li ng-repeat="web_seed in web_seeds">
+        {{web_seed}}
+      </li>
+    </ul>
+  </div>
+</div>

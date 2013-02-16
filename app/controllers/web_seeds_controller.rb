@@ -2,11 +2,11 @@ class WebSeedsController < ApplicationController
   respond_to :json
 
   def index
-    respond_with sorted_seeds
+    render json: sorted_seeds
   end
 
   def show
-    respond_with WebSeed.find(params[:id])
+    respond_with WebSeed[params[:id]]
   end 
 
   def create
@@ -29,7 +29,6 @@ class WebSeedsController < ApplicationController
   end
 
   private
-
   def sorted_seeds
     WebSeed.all.sort_by(:votes, :order => "desc")
   end

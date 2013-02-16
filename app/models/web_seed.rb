@@ -1,5 +1,6 @@
 class WebSeed < Ohm::Model
   attribute :url
+  attribute :votes
   counter :votes
 
   index :url

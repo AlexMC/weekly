@@ -4,7 +4,7 @@
   <div ng-controller="WebSeedCtrl">
 
     <form ng-submit="addWebSeed()">
-      <input type="text" ng-model="newWebSeed.url">
+      <input type="text" ng-model="newWebSeed.url" >
       <input type="submit" value="add">
     </form>
 
@@ -14,6 +14,7 @@
           {{web_seed.votes}}
         </button>
         {{web_seed.url}} 
+        <a href="#/show/{{web_seed.id}}">show</a>
         <button ng-click="deleteWebSeed(web_seed)">Delete</button>
       </li>
     </ul>

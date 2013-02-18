@@ -26,6 +26,7 @@ group :development do
   gem 'pry'
   gem 'pry-rails'
   gem 'sextant'
+  gem 'meta_request', '0.2.1'
 end
 
 # To use ActiveModel has_secure_password

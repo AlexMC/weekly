@@ -28,8 +28,5 @@ app.config ($routeProvider) ->
 
 @WebSeedShowCtrl = ($scope, $resource, $routeParams) ->
 
-  console.log "hello"
-
   WebSeed = $resource("/web_seeds/:id", {id: "@id"})
-
-  WebSeed.get({id: $routeParams.id})
+  $scope.web_seed = WebSeed.get({id: $routeParams.id})

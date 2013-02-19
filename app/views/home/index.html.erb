@@ -2,12 +2,14 @@
 
 <div ng-app="Weekly">
   <div ng-controller="WebSeedCtrl" ng-init="initWebSeeds()">
-    <span ng-show="web_seeds">Loading...</span>
+    <span ng-hide="web_seeds">Loading...</span>
 
     <form ng-submit="addWebSeed()">
       <input type="text" ng-model="newWebSeed.url" >
       <input type="submit" value="add">
     </form>
+
+    <div data-icon="web_seeds"> ICON </div>
 
     <ul>
       <li ng-repeat="web_seed in web_seeds">

@@ -9,7 +9,8 @@ app.config ($routeProvider) ->
 
   WebSeed = $resource("/web_seeds/:id/:vote", {id: "@id"}, {update: {method: "PUT"}, vote: {method: "PUT", params: {vote: "upvote"}}})
 
-  $scope.web_seeds = WebSeed.query()
+  $scope.initWebSeeds = ->
+    $scope.web_seeds = WebSeed.query()
 
   $scope.addWebSeed = ->
     web_seed = WebSeed.save($scope.newWebSeed)
